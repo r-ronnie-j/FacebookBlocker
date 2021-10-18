@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "facebook_blocker",
+    "version": "0.0.1",
+    "description": "This extension will allow you to block some of the part of facebook. We will block feeds not all but some we will also try to block feeds as per the individual feed or feed by the groups or feed by the page stories and so on.",
+    "browser_action": {
+        "default_title": "facebook blocker",
+        "default_popup": "popup.html",
+        "default_icon":"facebookBlock_16x16.png"
+    },
+    "icons":{
+        "16":"facebookBlock_16x16.png",
+        "48":"facebookBlock_48x48.png",
+        "128":"facebookBlock_128x128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.facebook.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "options_page": "options.html",
+    "permissions": [
+        "storage"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    }
+}
